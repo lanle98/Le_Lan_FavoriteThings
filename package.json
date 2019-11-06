@@ -1,12 +1,17 @@
 {
   "name": "le_lan_favorite_things",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "aaa",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app"
   },
-  "author": "",
+  "keywords": [
+    "classes",
+    "node",
+    "javascript"
+  ],
+  "author": "Lan",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+
+    {{#each food}}
+    <a class="col-md-3 m-2 text-center foods" href={{ID}}>
+
+
+        <img class="img-fluid" src={{Image}} alt="favorite thing" />
+        <h3>{{Name}}</h3>
+        <p>
+            {{Description}}
+        </p>
+
+    </a>
+
+    {{/each}}
+
+    <div class="desc"></div>
+
+</div>
