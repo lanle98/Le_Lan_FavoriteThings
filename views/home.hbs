@@ -1,19 +1,41 @@
+<section class="lightbox">
+    <div class="desc fixed modal">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content d-flex flex-column justify-content-between">
+                <div class="background-image"></div>
+                <span class="closeBtn">x</span>
+
+                <p class="mx-5 w-75 mx-auto"></p>
+                <h5 class="price mb-5 text-center"></h5>
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
 <div class="row justify-content-center">
 
     {{#each food}}
-    <a class="col-md-3 m-2 text-center foods" href={{ID}}>
+    <section class="col-md-3 m-2 text-center ">
+        <a class="foods" href={{ID}}>
 
 
-        <img class="img-fluid" src={{Image}} alt="favorite thing" />
-        <h3>{{Name}}</h3>
-        <p>
-            {{Description}}
-        </p>
+            <img class="img-fluid" src={{Image}} alt="favorite thing" />
+            <h3>{{Name}}</h3>
+            <p>
+                {{Description}}
+            </p>
 
-    </a>
+        </a></section>
 
     {{/each}}
 
-    <div class="desc"></div>
+
 
 </div>

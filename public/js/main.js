@@ -1,11 +1,25 @@
 (() => {
   console.log("fired");
   let foods = document.querySelectorAll(".foods");
+  let closeBtn = document.querySelector(".closeBtn");
+  console.log(closeBtn);
+
+  let description = document.querySelector(".desc");
+
+  closeBtn.addEventListener("click", function() {
+    description.classList.remove("desc-display");
+    console.log("AAAAA");
+  });
 
   function parseData(dish) {
-    let description = document.querySelector(".desc");
-    description.innerHTML = `<p>${dish.Description}</p>`;
-    description.innerHTML += `<h5 class="price m-4 text-center">$${dish.Price}</h5>`;
+    description.classList.add("desc-display");
+    let p = description.querySelector("p");
+    let price = description.querySelector("h5");
+    let backgroundImg = description.querySelector(".background-image");
+
+    backgroundImg.style.background = `url(../${dish.Image})`;
+    p.innerHTML = `${dish.Description}`;
+    price.innerHTML = `$${dish.Price}`;
   }
 
   function getData(e) {

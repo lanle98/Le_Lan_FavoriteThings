@@ -1,0 +1,20 @@
+// sass --watch sass:public/css --style compressed
+
+@import "modules/_lightbox";
+
+.jumbotron {
+  background: salmon;
+}
+
+h1,
+p {
+  color: white;
+}
+
+a {
+  color: salmon;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
