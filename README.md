@@ -1,7 +1,7 @@
 # Le_Lan_FavoriteThings
 
 
-This application highlighted my favorites based on specidic categories. The purpose is to practise ExpessJS and AJAX using MySQL database
+This application highlighted my favorites based on specific categories. The purpose is to practise ExpessJS and AJAX using MySQL database
 
 
 
