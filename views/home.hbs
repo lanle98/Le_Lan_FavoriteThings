@@ -2,15 +2,15 @@
     <div class="desc fixed modal">
 
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content d-flex flex-column justify-content-between">
+            <div class="modal-content d-flex flex-column justify-content-center align-items-center p-5">
                 <div class="background-image"></div>
                 <span class="closeBtn">x</span>
-
-                <p class="mx-5 w-75 mx-auto"></p>
-                <h5 class="price mb-5 text-center"></h5>
-
-
-
+                <h2 class="display-4"></h2>
+                <p class="w-100 mx-auto text-center"></p>
+                <h5 class="personal mb-5 text-center font-italic"></h5>
+                <iframe class="w-100" height="200px" style='z-index:200' src="" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" autoplay
+                    allowfullscreen></iframe>
 
             </div>
         </div>
@@ -19,18 +19,17 @@
     </div>
 </section>
 
-<div class="row justify-content-center">
+<div class="row">
 
-    {{#each food}}
-    <section class="col-md-3 m-2 text-center ">
-        <a class="foods" href={{ID}}>
-
-
-            <img class="img-fluid" src={{Image}} alt="favorite thing" />
-            <h3>{{Name}}</h3>
+    {{#each fav}}
+    <section class="col-md-4 p-1 text-center myfavs">
+        <a class="favs " href={{ID}}>
+            <div class="blur"><img class="favImg" src={{image}} alt="favorite thing" /></div>
+            <h3>{{title}}</h3>
             <p>
-                {{Description}}
+                Hint: {{hint}}
             </p>
+
 
         </a></section>
 

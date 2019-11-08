@@ -1,6 +1,6 @@
 (() => {
   console.log("fired");
-  let foods = document.querySelectorAll(".foods");
+  let favs = document.querySelectorAll(".favs");
   let closeBtn = document.querySelector(".closeBtn");
   console.log(closeBtn);
 
@@ -11,21 +11,28 @@
     console.log("AAAAA");
   });
 
-  function parseData(dish) {
+  function parseData(myFav) {
     description.classList.add("desc-display");
+    let name = description.querySelector("h2");
     let p = description.querySelector("p");
-    let price = description.querySelector("h5");
+    let personal = description.querySelector("h5");
     let backgroundImg = description.querySelector(".background-image");
+    let video = description.querySelector("iframe");
 
-    backgroundImg.style.background = `url(../${dish.Image})`;
-    p.innerHTML = `${dish.Description}`;
-    price.innerHTML = `$${dish.Price}`;
+    backgroundImg.style.background = `url(../${myFav.currentSrc})`;
+    name.innerHTML = myFav.name;
+    p.innerHTML = myFav.description;
+    personal.innerHTML = myFav.personal;
+    video.src = myFav.video;
   }
 
   function getData(e) {
     e.preventDefault();
 
-    let url = `/${this.getAttribute("href")}`;
+    let url = `/favorite/${this.getAttribute("href")}`;
+    let firstElement = this.firstElementChild;
+    let currentImage = firstElement.firstElementChild.getAttribute("src");
+    console.log(currentImage);
 
     fetch(url)
       .then(res => {
@@ -33,9 +40,10 @@
       })
       .then(data => {
         console.log(data);
+        data.currentSrc = currentImage;
         parseData(data);
       });
   }
 
-  foods.forEach(food => food.addEventListener("click", getData));
+  favs.forEach(fav => fav.addEventListener("click", getData));
 })();

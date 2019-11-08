@@ -6,7 +6,7 @@ const sql = require("../utils/sql");
 router.get("/", (req, res) => {
   console.log("at the main route");
 
-  let query = "SELECT ID, Name, Image FROM tbl_favoritething";
+  let query = "SELECT * FROM tbl_card";
 
   sql.query(query, (err, result) => {
     if (err) {
@@ -16,15 +16,15 @@ router.get("/", (req, res) => {
 
     console.log(result);
 
-    res.render("home", { food: result });
+    res.render("home", { fav: result });
   });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/favorite/:id", (req, res) => {
   console.log("at the user route");
   console.log(req.params.id);
 
-  let query = `select * from tbl_favoritething where foodID=${req.params.id}`;
+  let query = `select * from tbl_info where ID=${req.params.id}`;
 
   sql.query(query, (err, result) => {
     if (err) {

@@ -1,20 +1,32 @@
 // sass --watch sass:public/css --style compressed
 
+@import "modules/_favorites";
 @import "modules/_lightbox";
+@import "modules/_vars";
+@import "modules/_error";
 
 .jumbotron {
-  background: salmon;
+  background: $theme_color;
 }
 
 h1,
+h5,
 p {
   color: white;
 }
 
 a {
-  color: salmon;
+  color: $theme_color;
+
+  &:hover {
+    color: rgb(62, 85, 159);
+  }
 
   &:hover {
     text-decoration: none;
   }
+}
+
+footer {
+  background: $theme_color;
 }
